@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For Abin Giby 💖</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            font-family: 'Comic Sans MS', cursive;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 22px;
+            animation: float 6s linear infinite;
+        }
+
+        @keyframes float {
+            from { transform: translateY(100vh); opacity: 1; }
+            to { transform: translateY(-10vh); opacity: 0; }
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            text-align: center;
+            max-width: 420px;
+        }
+
+        h1 {
+            color: #e91e63;
+        }
+
+        .name {
+            color: #ff4081;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .teddy {
+            font-size: 80px;
+        }
+
+        button {
+            padding: 12px 25px;
+            margin: 10px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .yes { background: #e91e63; color: white; }
+        .no { background: #ffc1cc; }
+
+        .yes-content {
+            display: none;
+            margin-top: 25px;
+        }
+
+        .gift {
+            font-size: 80px;
+            cursor: pointer;
+            animation: shake 1s infinite;
+        }
+
+        @keyframes shake {
+            0% { transform: rotate(0); }
+            25% { transform: rotate(5deg); }
+            50% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+            100% { transform: rotate(0); }
+        }
+
+        .love {
+            display: none;
+            margin-top: 20px;
+            font-size: 22px;
+            color: #e91e63;
+            font-weight: bold;
+        }
+
+        .no-content {
+            display: none;
+            margin-top: 20px;
+            font-size: 20px;
+            color: #e91e63;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<script>
+    for (let i = 0; i < 25; i++) {
+        let h = document.createElement("div");
+        h.className = "heart";
+        h.innerHTML = "💖";
+        h.style.left = Math.random() * 100 + "vw";
+        h.style.animationDuration = (Math.random() * 3 + 3) + "s";
+        document.body.appendChild(h);
+    }
+</script>
+
+<div class="card">
+    <div class="name">💌 For My Love, Abin Giby 💌</div>
+
+    <h1>Will You Be My Valentine? 💘</h1>
+    <div class="teddy">🧸💝</div>
+
+    <button class="yes" onclick="yesClick()">YES 💖</button>
+    <button class="no" onclick="noClick()">NO 🙈</button>
+
+    <!-- YES SECTION -->
+    <div id="yesContent" class="yes-content">
+        <div class="gift" onclick="openGift()">🎁</div>
+        <p>Click the gift 🎀</p>
+        <div id="loveText" class="love">
+            I love you Shuttumani 💕🥰💖
+        </div>
+    </div>
+
+    <!-- NO SECTION -->
+    <div id="noContent" class="no-content">
+        Oops 😅 ,you’re already my Valentine 💘<br>
+        Click YES Idiot! 
+    </div>
+</div>
+
+<script>
+    function yesClick() {
+        document.getElementById("yesContent").style.display = "block";
+        document.getElementById("noContent").style.display = "none";
+        document.getElementById("loveText").style.display = "none";
+    }
+
+    function noClick() {
+        document.getElementById("noContent").style.display = "block";
+        document.getElementById("yesContent").style.display = "none";
+        document.getElementById("loveText").style.display = "none";
+    }
+
+    function openGift() {
+        document.querySelector(".gift").innerHTML = "💝";
+        document.getElementById("loveText").style.display = "block";
+    }
+</script>
+
+</body>
+</html>
